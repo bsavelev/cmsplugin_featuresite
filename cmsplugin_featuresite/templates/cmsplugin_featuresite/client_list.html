@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{{ object.title }}{% endblock %}
+{% block content %}
+    {% for object in object_list %}
+    <div class="row">
+        <article class="span12">
+            <h2>{{ object.title }}</h2>
+            <span class="date">{{ object.pub_date }}</span>
+            <div>
+                {{ object.content|safe }}
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}

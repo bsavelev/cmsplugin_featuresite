@@ -1,0 +1,9 @@
+{% load thumbnail %}
+{% for client in client_list %}
+<div class="client_item {% if forloop.first %}first{% endif %}">
+<a href="{{ client.get_absolute_url }}">
+    {% if client.main_photo %}<img src="{{ client.main_photo|thumbnail_url:'client_index' }}">{% endif %}
+    {{ client.title }}
+</a>
+    </div>
+{% endfor %}
